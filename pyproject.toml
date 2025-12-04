@@ -1,0 +1,37 @@
+[project]
+name = "python-template"
+version = "0.1.0"
+description = "A Python project template with essential configurations."
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.4.1",
+    "pytest-cov>=7.0.0",
+    "pytest-factoryboy>=2.8.1",
+    "pytest-icdiff>=0.9",
+    "pytest-sugar >= 1.1.1",
+]
+
+[tool.coverage.run]
+source = ["src"] # 要检查覆盖率的源码所在的文件夹
+omit = ["*/__init__.py"] # 要忽略的文件
+branch =  true # 是否分析分支覆盖率
+
+[tool.coverage.report]
+show_missing = true # 报告中显示没有覆盖的行号
+fail_under = 80 # 覆盖率低于某个值则fail
+
+#[tool.ruff.lint]
+#select = ["D", "E", "F"]
+#ignore = ["D10","E402","E501"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["S101"]  # Tests can use assertions.
+
+[tool.mypy]
+strict = true
+pretty = true

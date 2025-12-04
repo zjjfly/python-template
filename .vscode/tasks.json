@@ -1,0 +1,139 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Run Coverage.py with pytest",
+      "type": "shell",
+      "command": "uv run coverage run -m pytest",
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": [],
+      "group": {
+        "kind": "test",
+        "isDefault": true
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated"
+      }
+    },
+    {
+      "label": "Coverage report",
+      "type": "shell",
+      "command": "uv run coverage report",
+      "options": {
+        "cwd": "${workspaceFolder}"
+      },
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated"
+      }
+    },
+    {
+      "label": "Add package",
+      "type": "shell",
+      "command": "uv add ${input:addPackage}",
+      "options": { "cwd": "${workspaceFolder}" },
+      "problemMatcher": [],
+      "presentation": { "reveal": "always", "panel": "shared" }
+    },
+    {
+      "label": "Add dev package",
+      "type": "shell",
+      "command": "uv add --dev ${input:addPackage}",
+      "options": { "cwd": "${workspaceFolder}" },
+      "problemMatcher": [],
+      "presentation": { "reveal": "always", "panel": "shared" }
+    },
+    {
+      "label": "Sync dependencies",
+      "type": "shell",
+      "command": "uv sync",
+      "options": { "cwd": "${workspaceFolder}" },
+      "problemMatcher": [],
+      "presentation": { "reveal": "always", "panel": "shared" }
+    },
+    {
+      "label": "Export dependencies to requirements.txt",
+      "type": "shell",
+      "command": "uv pip compile pyproject.toml -o requirements.txt",
+      "options": { "cwd": "${workspaceFolder}" },
+      "problemMatcher": [],
+      "presentation": { "reveal": "always", "panel": "shared" }
+    },
+    {
+      "label": "Sync dependencies from requirements.txt",
+      "type": "shell",
+      "command": "uv pip sync requirements.txt",
+      "options": { "cwd": "${workspaceFolder}" },
+      "problemMatcher": [],
+      "presentation": { "reveal": "always", "panel": "shared" }
+    },
+    {
+      "label": "Run pre-commit hooks",
+      "type": "shell",
+      "command": "pre-commit run --all-files",
+      "options": { "cwd": "${workspaceFolder}" },
+      "problemMatcher": [],
+      "presentation": { "reveal": "always", "panel": "shared" }
+    },
+    {
+      "label": "Install pre-commit script",
+      "type": "shell",
+      "command": "pre-commit install",
+      "options": { "cwd": "${workspaceFolder}" },
+      "problemMatcher": [],
+      "presentation": { "reveal": "always", "panel": "shared" }
+    },
+    {
+      "label": "Install tool",
+      "type": "shell",
+      "command": "uv tool install ${input:tool}",
+      "options": { "cwd": "${workspaceFolder}" },
+      "problemMatcher": [],
+      "presentation": { "reveal": "always", "panel": "shared" }
+    },
+    {
+      "label": "Run installed tool",
+      "type": "shell",
+      "command": "uvx ${input:toolCmd}",
+      "options": { "cwd": "${workspaceFolder}" },
+      "problemMatcher": [],
+      "presentation": { "reveal": "always", "panel": "shared" }
+    },
+    {
+      "label": "Run a module",
+      "type": "shell",
+      "command": "uv run -m ${input:module}",
+      "options": { "cwd": "${workspaceFolder}" },
+      "problemMatcher": [],
+      "presentation": { "reveal": "always", "panel": "shared" }
+    }
+  ],
+  "inputs": [
+    {
+      "id": "addPackage",
+      "type": "promptString",
+      "description": "Package(s) to add (e.g. pytest or pytest==7.0).",
+      "default": "pytest"
+    },
+    {
+      "id": "tool",
+      "type": "promptString",
+      "description": "Tool (e.g. black or black==23.1.0)."
+    },
+    {
+      "id": "toolCmd",
+      "type": "promptString",
+      "description": "Run a Tool (e.g. mypy src tests)."
+    }
+    ,
+    {
+      "id": "module",
+      "type": "promptString",
+      "description": "Run a Module (e.g. a.b.c)."
+    }
+  ]
+}
