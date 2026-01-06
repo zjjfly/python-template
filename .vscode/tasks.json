@@ -110,6 +110,14 @@
       "options": { "cwd": "${workspaceFolder}" },
       "problemMatcher": [],
       "presentation": { "reveal": "always", "panel": "shared" }
+    },
+    {
+      "label": "Build distribution and wheel",
+      "type": "shell",
+      "command": "uv build",
+      "options": { "cwd": "${workspaceFolder}" },
+      "problemMatcher": [],
+      "presentation": { "reveal": "always", "panel": "shared" }
     }
   ],
   "inputs": [

@@ -16,6 +16,14 @@ dev = [
     "pytest-sugar >= 1.1.1",
 ]
 
+[build-system]
+requires = ["uv_build>=0.9.21,<0.10.0"]
+build-backend = "uv_build"
+
+[tool.uv.build-backend]
+module-name = "template"
+module-root = ""
+
 [tool.coverage.run]
 source = ["src"] # 要检查覆盖率的源码所在的文件夹
 omit = ["*/__init__.py"] # 要忽略的文件
