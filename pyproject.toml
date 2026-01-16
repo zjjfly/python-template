@@ -34,7 +34,7 @@ show_missing = true # 报告中显示没有覆盖的行号
 fail_under = 80 # 覆盖率低于某个值则fail
 
 [tool.ruff]
-src = ["pythonic"]
+src = ["template"]
 
 #[tool.ruff.lint]
 #select = ["D", "E", "F"]
