@@ -33,6 +33,9 @@ branch =  true # 是否分析分支覆盖率
 show_missing = true # 报告中显示没有覆盖的行号
 fail_under = 80 # 覆盖率低于某个值则fail
 
+[tool.ruff]
+src = ["pythonic"]
+
 #[tool.ruff.lint]
 #select = ["D", "E", "F"]
 #ignore = ["D10","E402","E501"]
