@@ -1,11 +1,10 @@
 [project]
-name = "pythonic_programming"
+name = "python-template"
 version = "0.1.0"
-description = "Code examples and exercises from the book 'Pythonic Programming'."
+description = "A Python project template with essential configurations."
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
-    "numpy>=2.4.0",
 ]
 
 [dependency-groups]
@@ -22,11 +21,11 @@ requires = ["uv_build>=0.9.21,<0.10.0"]
 build-backend = "uv_build"
 
 [tool.uv.build-backend]
-module-name = "pythonic"
+module-name = "template"
 module-root = ""
 
 [tool.coverage.run]
-source = ["pythonic"] # 要检查覆盖率的源码所在的文件夹
+source = ["src"] # 要检查覆盖率的源码所在的文件夹
 omit = ["*/__init__.py"] # 要忽略的文件
 branch =  true # 是否分析分支覆盖率
 
@@ -35,7 +34,7 @@ show_missing = true # 报告中显示没有覆盖的行号
 fail_under = 80 # 覆盖率低于某个值则fail
 
 [tool.ruff]
-src = ["pythonic"]
+src = ["template"]
 
 #[tool.ruff.lint]
 #select = ["D", "E", "F"]
@@ -43,7 +42,6 @@ src = ["pythonic"]
 
 [tool.ruff.lint.per-file-ignores]
 "tests/*" = ["S101"]  # Tests can use assertions.
-"pythonic/documentation.py" = ["F401"]  # Allow unused imports in documentation examples.
 
 [tool.mypy]
 strict = true
