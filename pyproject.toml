@@ -25,7 +25,7 @@ module-name = "template"
 module-root = ""
 
 [tool.coverage.run]
-source = ["src"] # 要检查覆盖率的源码所在的文件夹
+source = ["template"] # 要检查覆盖率的源码所在的文件夹
 omit = ["*/__init__.py"] # 要忽略的文件
 branch =  true # 是否分析分支覆盖率
 
