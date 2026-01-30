@@ -3,6 +3,8 @@
 .pytest_cache/
 .coverage
 .ruff_cache/
-.mypy_cache/
+*.p
 dist/
 .claude/
+.mypy_cache/
+checkpoints/

@@ -7,4 +7,3 @@ uv python pin 3.13
 uv tool install ruff
 uv tool install mypy
 uv tool install pre-commit
-uv sync
