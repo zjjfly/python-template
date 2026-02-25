@@ -6,3 +6,4 @@
 .mypy_cache/
 dist/
 .claude/
+uv.lock

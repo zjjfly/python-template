@@ -3,13 +3,13 @@ name = "python-template"
 version = "0.1.0"
 description = "A Python project template with essential configurations."
 readme = "README.md"
-requires-python = ">=3.13"
+requires-python = ">=3.12"
 dependencies = [
 ]
 
 [dependency-groups]
 dev = [
-    "pytest>=8.4.1",
+    "pytest>=9.0.2",
     "pytest-cov>=7.0.0",
     "pytest-factoryboy>=2.8.1",
     "pytest-icdiff>=0.9",
@@ -17,7 +17,7 @@ dev = [
 ]
 
 [build-system]
-requires = ["uv_build>=0.9.21,<0.10.0"]
+requires = ["uv_build>=0.10.6,<0.11.0"]
 build-backend = "uv_build"
 
 [tool.uv.build-backend]
