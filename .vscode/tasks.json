@@ -64,6 +64,14 @@
       "presentation": { "reveal": "always", "panel": "shared" }
     },
     {
+      "label": "Export dev dependencies to requirements-dev.txt",
+      "type": "shell",
+      "command": "uv export --only-group dev -o requirements-dev.txt",
+      "options": { "cwd": "${workspaceFolder}" },
+      "problemMatcher": [],
+      "presentation": { "reveal": "always", "panel": "shared" }
+    },
+    {
       "label": "Sync dependencies from requirements.txt",
       "type": "shell",
       "command": "uv pip sync requirements.txt",
