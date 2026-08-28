@@ -64,6 +64,14 @@
       "presentation": { "reveal": "always", "panel": "shared" }
     },
     {
+      "label": "Lock dependencies",
+      "type": "shell",
+      "command": "uv lock",
+      "options": { "cwd": "${workspaceFolder}" },
+      "problemMatcher": [],
+      "presentation": { "reveal": "always", "panel": "shared" }
+    },
+    {
       "label": "Export dev dependencies to requirements-dev.txt",
       "type": "shell",
       "command": "uv export --only-group dev -o requirements-dev.txt",
