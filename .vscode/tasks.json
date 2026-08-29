@@ -134,6 +134,14 @@
       "options": { "cwd": "${workspaceFolder}" },
       "problemMatcher": [],
       "presentation": { "reveal": "always", "panel": "shared" }
+    },
+    {
+      "label": "Generate SBOM",
+      "type": "shell",
+      "command": "uv run cyclonedx-py requirements requirements.txt -o sbom.json --of JSON",
+      "options": { "cwd": "${workspaceFolder}" },
+      "problemMatcher": [],
+      "presentation": { "reveal": "always", "panel": "shared" }
     }
   ],
   "inputs": [
